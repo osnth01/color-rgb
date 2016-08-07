@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 
 const ColorBox = ({ red, green, blue }) => {
 
@@ -19,5 +19,12 @@ const ColorBox = ({ red, green, blue }) => {
     <div>{hex}</div>
   )
 }
+
+ColorBox.propTypes = {
+  red: PropTypes.number.isRequired,
+  green: PropTypes.number.isRequired,
+  blue: PropTypes.number.isRequired
+}
+
 
 export default ColorBox
