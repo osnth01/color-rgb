@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom'
 import colors from './reducers'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-
-const App = () => <div>hi</div>
+import App from './containers/AppContainer'
 
 let store = createStore(colors)
 
