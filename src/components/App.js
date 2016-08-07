@@ -1,5 +1,12 @@
 import React from 'react'
+import Slider from './Slider'
 
-const App = () => <div>hi</div>
+const App = ({ onChange }) => (
+  <div>
+    <Slider onChange={onChange} />
+    <Slider onChange={onChange} />
+    <Slider onChange={onChange} />
+  </div>
+)
 
 export default App

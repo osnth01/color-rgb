@@ -1,0 +1,24 @@
+import React from 'react'
+import expect from 'expect'
+import App from '../../src/components/App'
+import { mount } from 'enzyme'
+
+function setup() {
+  const wrapper = mount(
+    <App />
+  )
+
+  return {
+    wrapper,
+    inputs: wrapper.find('input')
+  }
+}
+
+describe('App component', () => {
+  it('should render three Slider components', () => {
+    const { inputs } = setup()
+
+    expect(inputs.at(0).type()).toEqual('input')
+    expect(inputs.length).toEqual(3)
+  })
+})
