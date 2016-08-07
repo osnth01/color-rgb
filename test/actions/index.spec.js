@@ -5,7 +5,7 @@ describe('changeColorLevel', () => {
   it('should create a LEVEL_CHANGE action', () => {
     const colorChange = {
       colorLevel: 100,
-      color: 'r'
+      color: 'red'
     }
 
     expect(

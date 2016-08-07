@@ -1,5 +1,5 @@
 const colors = (state, action) => {
-  state = state || {r: 100, g: 100, b: 100}
+  state = state || {red: 100, green: 100, blue: 100}
   switch(action.type) {
     case 'CHANGE_COLOR_LEVEL':
       const color = action.colorChange.color

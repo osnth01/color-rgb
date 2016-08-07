@@ -4,8 +4,12 @@ import App from '../../src/components/App'
 import { mount } from 'enzyme'
 
 function setup() {
+  const actions = {
+    onChange: expect.createSpy()
+  }
+
   const wrapper = mount(
-    <App />
+    <App onChange={actions.onChange}/>
   )
 
   return {

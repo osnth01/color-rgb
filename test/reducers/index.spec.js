@@ -5,31 +5,31 @@ describe('colors reducer', () => {
   it('should have an initial state', () => {
     expect(colors(undefined, {}))
       .toEqual({
-        r: 100,
-        g: 100,
-        b: 100
+        red: 100,
+        green: 100,
+        blue: 100
       })
   })
 
   it('should change a color level', () => {
     const initialState = {
-      r: 100,
-      g: 100,
-      b: 100
+      red: 100,
+      green: 100,
+      blue: 100
     }
 
     const newColorState = colors(initialState, {
       type: 'CHANGE_COLOR_LEVEL',
       colorChange: {
         colorLevel: 255,
-        color: 'r'
+        color: 'red'
       }
     })
 
     expect(newColorState).toEqual({
-      r: 255,
-      g: 100,
-      b: 100
+      red: 255,
+      green: 100,
+      blue: 100
     })
   })
   
