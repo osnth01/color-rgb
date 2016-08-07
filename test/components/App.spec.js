@@ -8,8 +8,14 @@ function setup() {
     onChange: expect.createSpy()
   }
 
+  const colors = {
+    red: 100,
+    green: 100,
+    blue: 1000
+  }
+
   const wrapper = mount(
-    <App onChange={actions.onChange}/>
+    <App onChange={actions.onChange} colors={colors}/>
   )
 
   return {
