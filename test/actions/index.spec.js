@@ -3,15 +3,18 @@ import { changeColorLevel } from '../../src/actions'
 
 describe('changeColorLevel', () => {
   it('should create a LEVEL_CHANGE action', () => {
-    const colorLevel = 100
+    const colorChange = {
+      colorLevel: 100,
+      color: 'r'
+    }
 
     expect(
-      changeColorLevel(colorLevel)
+      changeColorLevel(colorChange)
     )
     .toEqual(
       {
         type: 'CHANGE_COLOR_LEVEL',
-        colorLevel
+        colorChange
       }
     )
   })

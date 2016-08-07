@@ -1,6 +1,6 @@
-export const changeColorLevel = (colorLevel) => {
+export const changeColorLevel = (colorChange) => {
   return {
     type: 'CHANGE_COLOR_LEVEL',
-    colorLevel
+    colorChange
   }
 }
