@@ -30,8 +30,19 @@ const ColorBox = ({ colors }) => {
 
   let hex = '#' + red + green + blue
 
+  let style = {
+    border: '1px solid black',
+    width: '150px',
+    height: '150px',
+    textAlign: 'center',
+    lineHeight: '150px',
+    background: hex
+  }
+
   return (
-    <div>{hex}</div>
+    <div style={style}>
+      {hex}
+    </div>
   )
 }
 
