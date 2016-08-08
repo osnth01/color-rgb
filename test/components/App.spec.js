@@ -9,9 +9,9 @@ function setup() {
   }
 
   const colors = {
-    red: 100,
-    green: 100,
-    blue: 1000
+    red: 0,
+    green: 0,
+    blue: 0
   }
 
   const wrapper = mount(

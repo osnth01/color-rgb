@@ -4,14 +4,23 @@ import ColorBox from './ColorBox'
 
 const App = ({ colors, changeColorLevel }) => {
   return (
-  <div>
-    <Slider onChange={changeColorLevel} colorId="red" />
-    <Slider onChange={changeColorLevel} colorId="green" />
-    <Slider onChange={changeColorLevel} colorId="blue" />
+    <div>
+      <Slider
+        color={'red'}
+        onChange={changeColorLevel}
+        value={colors.red} />
+      <Slider
+        color={'green'}
+        onChange={changeColorLevel}
+        value={colors.green} />
+      <Slider
+        color={'blue'}
+        onChange={changeColorLevel}
+        value={colors.blue} />
 
-    <ColorBox red={colors.red} green={colors.green} blue={colors.blue} />
-  </div>
-)
+      <ColorBox colors={colors} />
+    </div>
+  )
 }
 
 App.propTypes = {

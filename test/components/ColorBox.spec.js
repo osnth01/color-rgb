@@ -5,12 +5,12 @@ import { shallow } from 'enzyme'
 
 function setup() {
   const props = {
-    red: 100,
-    green: 100,
-    blue: 100
+    red: 0,
+    green: 0,
+    blue: 0
   }
 
-  const component = shallow(<ColorBox {...props} />)
+  const component = shallow(<ColorBox colors={props} />)
 
   return {
     component,
@@ -19,9 +19,9 @@ function setup() {
 }
 
 describe('ColorBox', () => {
-  it('returns the correct hex value', () => {
+  it('returns a hex value', () => {
     const { component } = setup()
 
-    expect(component.text()).toEqual('#646464');
+    expect(component.text()).toEqual('#000000');
   })
 })

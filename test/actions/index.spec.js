@@ -2,19 +2,18 @@ import expect from 'expect'
 import { changeColorLevel } from '../../src/actions'
 
 describe('changeColorLevel', () => {
-  it('should create a LEVEL_CHANGE action', () => {
-    const colorChange = {
-      colorLevel: 100,
-      color: 'red'
-    }
+  it('should create a CHANGE_COLOR action', () => {
+    let color = 'red'
+    let value = 255
 
     expect(
-      changeColorLevel(colorChange)
+      changeColorLevel(color, value)
     )
     .toEqual(
       {
         type: 'CHANGE_COLOR_LEVEL',
-        colorChange
+        color,
+        value
       }
     )
   })

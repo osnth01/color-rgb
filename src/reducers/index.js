@@ -1,11 +1,25 @@
-const colors = (state, action) => {
-  state = state || {red: 100, green: 100, blue: 100}
-  switch(action.type) {
-    case 'CHANGE_COLOR_LEVEL':
-      const color = action.colorChange.color
-      const colorLevel = action.colorChange.colorLevel
+const initialState = {
+  red: 0,
+  green: 0,
+  blue: 0
+}
 
-      state[color] = colorLevel
+const colors = (state = initialState, action) => {
+  switch(action.type) {
+    
+    case 'CHANGE_COLOR_LEVEL':
+      let color = {}
+      color[action.color] = parseInt(action.value)
+
+      let newState = Object.assign(state, color)
+      let returnState = {
+        red: newState.red,
+        green: newState.green,
+        blue: newState.blue,
+      }
+      return returnState
+
+    default:
       return state
   }
 

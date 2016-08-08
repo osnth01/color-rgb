@@ -2,34 +2,71 @@ import expect from 'expect'
 import colors from '../../src/reducers'
 
 describe('colors reducer', () => {
+  const initialState = {
+    red: 0,
+    green: 0,
+    blue: 0
+  }
+
   it('should have an initial state', () => {
     expect(colors(undefined, {}))
-      .toEqual({
-        red: 100,
-        green: 100,
-        blue: 100
-      })
+      .toEqual(initialState)
   })
 
-  it('should change a color level', () => {
-    const initialState = {
-      red: 100,
-      green: 100,
-      blue: 100
-    }
+  it('should change the red value', () => {
 
-    const newColorState = colors(initialState, {
+    const newColorState = colors({
+      red: 0,
+      green: 0,
+      blue: 0
+    }, {
       type: 'CHANGE_COLOR_LEVEL',
-      colorChange: {
-        colorLevel: 255,
-        color: 'red'
-      }
+      color: 'red',
+      value: 255
     })
 
     expect(newColorState).toEqual({
       red: 255,
-      green: 100,
-      blue: 100
+      green: 0,
+      blue: 0
+    })
+  })
+
+  it('should change the green value', () => {
+
+    const newColorState = colors({
+      red: 0,
+      green: 0,
+      blue: 0
+    }, {
+      type: 'CHANGE_COLOR_LEVEL',
+      color: 'green',
+      value: 255
+    })
+
+    expect(newColorState).toEqual({
+      red: 0,
+      green: 255,
+      blue: 0
+    })
+  })
+
+  it('should change the blue value', () => {
+
+    const newColorState = colors({
+      red: 0,
+      green: 0,
+      blue: 0
+    }, {
+      type: 'CHANGE_COLOR_LEVEL',
+      color: 'blue',
+      value: 255
+    })
+
+    expect(newColorState).toEqual({
+      red: 0,
+      green: 0,
+      blue: 255
     })
   })
   

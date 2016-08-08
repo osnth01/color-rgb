@@ -1,19 +1,14 @@
 import React, { PropTypes } from 'react'
 
-const ColorBox = ({ red, green, blue }) => {
+const numToHex = (num) => {
+  let hex = num.toString(16)
+  if (hex.length == 1)
+    hex = "0" + hex
+  return hex
+}
 
-  let colors = [red, green, blue]
-
-  let hexColors = colors.map((color) => {
-    let hexColor = color.toString(16)
-    
-    if (hexColor.length === 1)
-      hexColor = "0" + hexColor
-
-    return hexColor
-  })
-
-  const hex = "#" + hexColors.join("")
+const ColorBox = ({ colors }) => {
+  let hex = '#' + numToHex(colors.red) + numToHex(colors.green) + numToHex(colors.blue)
 
   return (
     <div>{hex}</div>
@@ -21,9 +16,7 @@ const ColorBox = ({ red, green, blue }) => {
 }
 
 ColorBox.propTypes = {
-  red: PropTypes.number.isRequired,
-  green: PropTypes.number.isRequired,
-  blue: PropTypes.number.isRequired
+  colors: PropTypes.object.isRequired
 }
 
 

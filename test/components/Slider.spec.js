@@ -1,20 +1,22 @@
 import React from 'react'
 import expect from 'expect'
 import Slider from '../../src/components/Slider'
-import { shallow } from 'enzyme'
+import { mount } from 'enzyme'
 
 function setup() {
   const actions = {
     onChange: expect.createSpy()
   }
+  const color = 'red'
 
-  const component = shallow(
-    <Slider onChange={actions.onChange} />
+  const component = mount(
+    <Slider onChange={actions.onChange} color={color} />
   )
 
   return {
     actions,
     component,
+    color,
     input: component.find('input')
   }
 }
