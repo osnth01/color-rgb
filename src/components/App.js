@@ -5,19 +5,17 @@ import ColorBox from './ColorBox'
 const App = ({ colors, changeColorLevel }) => {
   return (
     <div>
-      <Slider
-        color={'red'}
-        onChange={changeColorLevel}
-        value={colors.red} />
-      <Slider
-        color={'green'}
-        onChange={changeColorLevel}
-        value={colors.green} />
-      <Slider
-        color={'blue'}
-        onChange={changeColorLevel}
-        value={colors.blue} />
-
+      { 
+        colors.map( (color, i) => {
+          return (
+              <Slider
+                key={i}
+                color={color.name}
+                value={color.value}
+                onChange={changeColorLevel} />
+            )
+        } )
+      }
       <ColorBox colors={colors} />
     </div>
   )
@@ -25,7 +23,7 @@ const App = ({ colors, changeColorLevel }) => {
 
 App.propTypes = {
   changeColorLevel: PropTypes.func.isRequired,
-  colors: PropTypes.object.isRequired
+  colors: PropTypes.array.isRequired
 }
 
 export default App

@@ -8,7 +8,27 @@ const numToHex = (num) => {
 }
 
 const ColorBox = ({ colors }) => {
-  let hex = '#' + numToHex(colors.red) + numToHex(colors.green) + numToHex(colors.blue)
+  let red
+  let green
+  let blue
+
+  colors.map((color) => {
+    switch (color.name) {
+    case 'red':
+      red = numToHex(color.value)
+      break;
+    case 'green':
+      green = numToHex(color.value)
+      break;
+    case 'blue':
+      blue = numToHex(color.value)
+      break;
+    default:
+      break;
+    }
+  })
+
+  let hex = '#' + red + green + blue
 
   return (
     <div>{hex}</div>
@@ -16,7 +36,7 @@ const ColorBox = ({ colors }) => {
 }
 
 ColorBox.propTypes = {
-  colors: PropTypes.object.isRequired
+  colors: PropTypes.array.isRequired
 }
 
 

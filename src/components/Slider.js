@@ -9,7 +9,7 @@ const Slider = ({ onChange, color, value }) => {
     max="255"
     value={value}
     onChange={ (e) => {
-      onChange(color, e.target.value)
+      onChange(color, parseInt(e.target.value))
     }} />
   )
 }

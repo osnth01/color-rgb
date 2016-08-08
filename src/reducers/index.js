@@ -1,23 +1,28 @@
-const initialState = {
-  red: 0,
-  green: 0,
-  blue: 0
-}
+const initialState = [
+  {
+    name: 'red',
+    value: 0
+  },
+  {
+    name: 'green',
+    value: 0
+  },
+  {
+    name: 'blue',
+    value: 0
+  }
+]
 
 const colors = (state = initialState, action) => {
   switch(action.type) {
     
     case 'CHANGE_COLOR_LEVEL':
-      let color = {}
-      color[action.color] = parseInt(action.value)
-
-      let newState = Object.assign(state, color)
-      let returnState = {
-        red: newState.red,
-        green: newState.green,
-        blue: newState.blue,
-      }
-      return returnState
+      return state.map((color) => {
+        if (color.name === action.color) {
+          color.value = action.value
+        }
+        return color
+      })
 
     default:
       return state

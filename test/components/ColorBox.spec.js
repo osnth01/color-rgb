@@ -4,11 +4,20 @@ import ColorBox from '../../src/components/ColorBox'
 import { shallow } from 'enzyme'
 
 function setup() {
-  const props = {
-    red: 0,
-    green: 0,
-    blue: 0
-  }
+  const props = [
+    {
+      name: 'red',
+      value: 0
+    },
+    {
+      name: 'green',
+      value: 0
+    },
+    {
+      name: 'blue',
+      value: 0
+    }
+  ]
 
   const component = shallow(<ColorBox colors={props} />)
 
